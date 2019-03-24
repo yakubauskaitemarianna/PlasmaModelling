@@ -1,7 +1,5 @@
 # PlasmaModelling
 
-# PlasmaModelling
-
 # Лабораторная №2 по моделированию
 
 ## Условие лабораторной
