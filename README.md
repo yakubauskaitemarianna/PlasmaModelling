@@ -12,9 +12,9 @@ https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/l2
 
 Из некоторых физических соображений получена система дифференциальных уравнений:
 
-![A](../formulas/2_1.png)
+![A](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_1.png)
 
-![B](../formulas/2_2.png)
+![B](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_2.png)
 
 Ее необходимо решить (численно) и построить графики:
 
@@ -26,14 +26,14 @@ https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/l2
 
 Rp, оно же сопротивление газоразрядной трубки, находится в зависимости от силы тока:
 
-![](../formulas/2_3.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_3.png)
 
 Давление _p_ в формуле = 15 атм.
 
 
 Функция T(r):
 
-![](../formulas/2_5.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_5.png)
 
 Электропроводность `σ(T, p)`, концентрация тяжелых частиц `n(T, p)`, а также `T0(I)` и `m(I)` заданы таблично.
 
@@ -70,7 +70,7 @@ I|T0|m
 
 Используя обычную линейную интерполяцию:
 
-![](../formulas/2_6.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_6.png)
 , где `(I0, T0)` и `(I1, T1)` - узлы таблицы, между которыми находится нужное значение.
 
 Исключаем экстеполяцию.
@@ -121,7 +121,7 @@ T|p = 15атм
 Здесь необходима логарифмическая интерполяция по давлению и по температуре.
 
 
-![](../formulas/2_7.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_7.png)
 
 
 ## Нахождение Rp(I)
@@ -131,7 +131,7 @@ T|p = 15атм
 
 Для нахождения _Rp_ необходимо воспользоваться данной формулой:
 
-![](../formulas/2_10.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_10.png)
 
 В этом уравнении все величины заданы. 
 
@@ -139,7 +139,7 @@ T|p = 15атм
 
 Каждый раз при вычислении нам необходимо считать интеграл 
 
-![](../formulas/2_12.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_12.png)
 
 Для этого воспользуемся методом Симпсона
 
@@ -148,13 +148,13 @@ T|p = 15атм
 Вообще для данного метода нужно любое нечетное количество узлов, но повелением свыше интеграл считается с использованием **41** узла.
 В начале вычисления сопротивления _Rp_ (а именно ради него все это происходит, если кто забыл) стоит завести массив температур _T( r )_ из 41 элемента. Температура высчитывается по формуле:
 
-![](../formulas/2_13.png), где
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_13.png), где
 _T0_ и _m_ считаются из таблицы (ага! именно здесь проявляется зависимость Rp от силы тока I), а Tw и R - константы.
 Теперь можно считать интеграл по данной формуле Симпсона. _n(T, p)_ получается опять-таки из табличных значений.
 ***
 После решения уравнения полученное значение давления _p_ можно подставить в формулу для Rp:
 
-![](../formulas/2_14.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_14.png)
 
 Интеграл в ней считается аналогичным образом, массив температур можно использовать тот же самый, а σ(T, p) берется опять-таки из таблицы.
 
@@ -171,24 +171,24 @@ _Замечание. Посмотреть метод в общем виде мо
 
 Для начала выразим значения производных `dI/dt` и `dUc/dt` и для удобства обозначим их соответсвенно `f` и `g`.
 
-![](../formulas/2_15.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_15.png)
 
-![](../formulas/2_16.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_16.png)
 
 Решение системы заключается в применении формул:
 
-![](../formulas/2_17.png)
-![](../formulas/2_18.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_17.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_18.png)
 
 Коэффициенты k, m считаются следующим образом:
 
-![](../formulas/2_19.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_19.png)
 
-![](../formulas/2_20.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_20.png)
 
-![](../formulas/2_21.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_21.png)
 
-![](../formulas/2_22.png)
+![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_22.png)
 
 Помимо `I(t)` и `Uc(t)`, которые тут вычисляются, надо также вывести:
  * `Rp(t)` - по сути, это просто значение сопротивления _Rp_ для соответствующего значения силы тока _I_
