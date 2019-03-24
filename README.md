@@ -4,9 +4,11 @@
 
 ## Условие лабораторной
 
+
 Дан колебательный контур с газоразрядной трубкой
 
-![](../formulas/l2_scheme.png)
+![](
+https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/l2_scheme.png)
 
 Из некоторых физических соображений получена система дифференциальных уравнений:
 
