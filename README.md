@@ -127,8 +127,6 @@ T|p = 15атм
 ## Нахождение Rp(I)
 ***
 
-**Силу тока надо брать по модулю, она может быть отрицательной!**
-
 Для нахождения _Rp_ необходимо воспользоваться данной формулой:
 
 ![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/2_10.png)
