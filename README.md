@@ -400,6 +400,8 @@ _Замечание. Посмотреть метод в общем виде мо
 T_max = 2.e-4| I_max = 866.45    |  U_max 1500.00    | Rp_max 206.71    |
 T_min = 0    |  I_min = 0.50     | U_min = 587.14    | Rp_min = 0.75    |
 
+
+
 ![](https://github.com/yakubauskaitemarianna/PlasmaModelling/blob/master/formulas/result.png)
 
 <hr>
