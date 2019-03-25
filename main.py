@@ -117,9 +117,17 @@ if __name__ == '__main__':
 
         result.add_row(["{:4.2e}".format(t), "{:4.5f}".format(Ii), "{:4.5f}".format(Ui), "{:4.5f}".format(Rpi)])
 
-    result.add_row(["T_max = "+"{:4.2e}".format(ts[-1]), "I_max = "+"{:4.5f}".format(max(I)), "U_max "+"{:4.5f}".format(max(Uc)), "Rp_max "+"{:4.5f}".format(max(Rp))])
-    result.add_row(["T_min = "+"{:4.2e}".format(ts[0]), "I_min = "+"{:4.5f}".format(min(I)), "U_min = "+"{:4.5f}".format(min(Uc)), "Rp_min = "+"{:4.5f}".format(min(Rp))])
     print(result)
+
+    print('\n' + 'Максимальный ток = ' + "{:4.5f}".format(max(I)) + ' достигается на ' + '{:4.2e}'.format(ts[I.index(max(I))]) + ' секунде')
+    print('Минимальный ток = ' + "{:4.5f}".format(min(I))+ ' достигается на ' + '{:4.2e}'.format(ts[I.index(min(I))]) + ' секунде')
+          
+    print('\n' + 'Максимальное напряжение = ' + "{:4.5f}".format(max(Uc)) + ' достигается на ' + '{:4.2e}'.format(ts[Uc.index(max(Uc))]) + ' секунде')
+    print('Минимальное напряжение = ' + "{:4.5f}".format(min(Uc)) + ' достигается на ' + '{:4.2e}'.format(ts[Uc.index(min(Uc))]) + ' секунде')
+
+          
+    print('\n' + 'Максимальное сопротивление = ' + "{:4.5f}".format(max(Rp)) + ' достигается на ' + '{:4.2e}'.format(ts[Rp.index(max(Rp))]) + ' секунде')
+    print('Минимальное сопротивление = ' + "{:4.5f}".format(min(Rp)) + ' достигается на ' + '{:4.2e}'.format(ts[Rp.index(min(Rp))]) + ' секунде')
     
     # График
     df = pd.DataFrame({'t' : ts, 'I' : I, 'Uc' : Uc, 'Rp' : Rp})
